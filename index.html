@@ -6,160 +6,160 @@
 <title>Secure Payment Request</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-body{
-    background:linear-gradient(135deg,#1e3c72,#2a5298);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+body {
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
 }
 
-.card{
-    width:420px;
-    max-width:100%;
-    background:white;
-    border-radius:18px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.25);
-    overflow:hidden;
+.card {
+    width: 100%;
+    max-width: 380px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
-.header{
-    background:#0d1b3f;
-    color:white;
-    padding:18px;
-    text-align:center;
-    font-size:18px;
-    font-weight:600;
+.header {
+    background: #0d1b3f;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-.content{
-    padding:25px;
+.content {
+    padding: 20px;
 }
 
-input, button{
-    width:100%;
-    padding:14px;
-    margin-bottom:15px;
-    border-radius:10px;
-    border:1px solid #ddd;
-    font-size:14px;
-    transition:0.2s;
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.2s;
 }
 
-input:focus{
-    border-color:#2a5298;
-    box-shadow:0 0 0 3px rgba(42,82,152,0.1);
-    outline:none;
+input:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 0 2px rgba(42,82,152,0.1);
+    outline: none;
 }
 
-button{
-    border:none;
-    background:#2a5298;
-    color:white;
-    font-size:15px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
+button {
+    border: none;
+    background: #2a5298;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-button:hover{
-    background:#1e3c72;
-    transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+button:hover {
+    background: #1e3c72;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.link-box{
-    background:#f3f6ff;
-    padding:12px;
-    border-radius:8px;
-    margin-top:15px;
-    word-break:break-all;
-    font-size:13px;
+.link-box {
+    background: #f3f6ff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    word-break: break-all;
+    font-size: 13px;
 }
 
-.payment-view{
-    display:none;
-    animation:fadeSlide 0.6s ease forwards;
+.payment-view {
+    display: none;
+    animation: fadeSlide 0.5s ease forwards;
 }
 
-@keyframes fadeSlide{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.success-banner{
-    background:#1dbf73;
-    color:white;
-    padding:12px;
-    text-align:center;
-    font-weight:600;
-    animation:pop 0.5s ease;
+.success-banner {
+    background: #1dbf73;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-bottom: 15px;
 }
 
-@keyframes pop{
-    0%{transform:scale(0.8);}
-    100%{transform:scale(1);}
+.amount {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #1e3c72;
+    margin: 15px 0;
 }
 
-.amount{
-    font-size:32px;
-    font-weight:700;
-    text-align:center;
-    color:#1e3c72;
-    margin:20px 0;
+.details {
+    background: #f7f9ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.details{
-    background:#f7f9ff;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
 }
 
-.row{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:12px;
-    font-size:14px;
+.txn {
+    font-size: 13px;
+    color: #555;
+    margin: 10px 0;
+    text-align: center;
 }
 
-.txn{
-    font-size:13px;
-    color:#555;
-    margin-top:10px;
-    text-align:center;
+.copy-btn {
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    background: #2a5298;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
-.copy-btn{
-    font-size:11px;
-    padding:3px 6px;
-    border-radius:6px;
-    background:#2a5298;
-    color:white;
-    cursor:pointer;
-    margin-left:6px;
+/* Remove copy button for receiver */
+#v_name + .copy-btn {
+    display: none;
 }
 
-.footer{
-    text-align:center;
-    font-size:12px;
-    color:#999;
-    margin-top:20px;
+#txn_input {
+    padding: 8px;
+    font-size: 14px;
 }
 
-/* Hide copy button on mobile for Receiver */
-@media (max-width:768px){
-    #v_name + .copy-btn{
-        display:none;
-    }
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
 }
 </style>
 </head>
@@ -234,50 +234,50 @@ Secure Payment Request Interface
 
 <script>
 function generateLink(){
-    let name=document.getElementById("name").value.trim();
-    let upi=document.getElementById("upi").value.trim();
-    let amount=document.getElementById("amount").value.trim();
+    let name = document.getElementById("name").value.trim();
+    let upi = document.getElementById("upi").value.trim();
+    let amount = document.getElementById("amount").value.trim();
 
     if(!name || !upi || !amount){
         alert("Please fill all fields");
         return;
     }
 
-    let url=window.location.origin+window.location.pathname+
-    "?name="+encodeURIComponent(name)+
-    "&upi="+encodeURIComponent(upi)+
-    "&amount="+encodeURIComponent(amount);
+    let url = window.location.origin + window.location.pathname +
+    "?name=" + encodeURIComponent(name) +
+    "&upi=" + encodeURIComponent(upi) +
+    "&amount=" + encodeURIComponent(amount);
 
-    document.getElementById("result").innerHTML=
-    "<div class='link-box'>"+url+"</div>";
+    document.getElementById("result").innerHTML =
+    "<div class='link-box'>" + url + "</div>";
 }
 
 function loadPayment(){
-    const params=new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
 
     if(params.has("name")){
-        document.getElementById("generator").style.display="none";
-        document.getElementById("viewer").style.display="block";
+        document.getElementById("generator").style.display = "none";
+        document.getElementById("viewer").style.display = "block";
 
-        document.getElementById("v_name").innerText=params.get("name");
-        document.getElementById("v_upi").innerText=params.get("upi");
-        document.getElementById("v_amount").innerText="₹ "+params.get("amount");
+        document.getElementById("v_name").innerText = params.get("name");
+        document.getElementById("v_upi").innerText = params.get("upi");
+        document.getElementById("v_amount").innerText = "₹ " + params.get("amount");
     }
 }
 
 function copyText(id){
-    let text=document.getElementById(id).innerText;
+    let text = document.getElementById(id).innerText;
     navigator.clipboard.writeText(text);
-    alert("Copied: "+text);
+    alert("Copied: " + text);
 }
 
 function submitPayment(){
-    let txn=document.getElementById("txn_input").value.trim();
+    let txn = document.getElementById("txn_input").value.trim();
     if(!txn){
         alert("Please enter Transaction ID before submitting");
         return;
     }
-    alert("Payment Request Submitted!\nTransaction ID: "+txn);
+    alert("Payment Request Submitted!\nTransaction ID: " + txn);
 }
 
 loadPayment();
